@@ -1,0 +1,139 @@
+$category: category;
+
+.header {
+	&__logo {
+		width: 60px;
+		height: 40px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__category {
+		display: flex;
+		padding: 0px 16px 0px 50px;
+
+		&__text {
+			& p {
+				color: #fff;
+				cursor: pointer;
+			}
+			& p:first-child {
+				font-size: 14px;
+			}
+
+			& p:last-child {
+				font-size: 15px;
+    		font-weight: 500;
+			}
+		}
+	}
+
+	&__search {
+		flex: 1 1 0%;
+    display: flex;
+		flex-direction: column;
+
+		&__wrapper {
+			input {
+				flex: 1 1 0%;
+				padding: 0px 12px;
+				border: none;
+				border-top-left-radius: 2px;
+				border-bottom-left-radius: 2px;
+	
+				line-height: 37px;
+				font-size: 13px;
+				outline: none;
+			}
+			button {
+				border: none;
+				padding: 4px 15px;
+				border-top-right-radius: 2px;
+				border-bottom-left-radius: 2px;
+
+				background-color: #0d5fb6;
+				color: #fffffe;
+				font-weight: 500;
+				outline: none;
+				
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+				cursor: pointer;
+			}
+		}
+
+		&__hint span {
+			margin-right: 7px;
+			font-size: 14px;
+			color: #fffffe;
+			cursor: pointer;
+		}
+	}
+
+	&__account {
+		display: flex;
+    color: #fffffe;
+    padding-left: 16px;
+
+		& > svg {
+			font-size: 2.25rem;
+		}
+
+		&__text {
+			display: flex;
+    	flex-direction: column;
+
+			& span:first-child {
+				font-size: 13px;
+			}
+			& span:last-child {
+				font-size: 14px;
+
+				& > svg {
+					font-size: 1rem;
+					position: relative;
+					top: 5px;
+				}
+			}
+		}
+	}
+
+	&__cart {
+		color: #fffffe;
+    display: flex;
+    padding-left: 20px;
+
+		&__wrapper {
+			position: relative;
+
+			& > svg {
+				font-size: 2rem;
+			}
+			& > span.cart-badge {
+				position: absolute;
+				left: 23px;
+
+				color: #000001;
+				background-color: #fdd835;
+
+				font-weight: 500;
+				font-size: 13px;
+				display: inline-block;
+				padding: 1px 7px;
+				line-height: 19px;
+				border-radius: 50%;
+			}
+		}
+
+		& > span {
+			font-size: 13px;
+			position: relative;
+			top: 20px;
+		}
+	}
+}
