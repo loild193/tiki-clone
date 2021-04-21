@@ -1,13 +1,18 @@
 import { makeStyles } from "@material-ui/core";
 
 export const containerStyle = makeStyles({
-	root: {
+	headerRoot: {
 		backgroundColor: "rgb(1 127 252)",
 	},
 	header: {
 		display: "flex",
 		justifyContent: "space-between",
 		padding: "20px 0px",
+	},
+	homeBanner: {
+		marginTop: "16px",
+    paddingTop: "14px",
+    backgroundColor: "#fffffe",
 	},
 }, { name: "MuiContainer" });
 

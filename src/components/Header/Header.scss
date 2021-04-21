@@ -37,6 +37,8 @@ $category: category;
 		flex-direction: column;
 
 		&__wrapper {
+			display: flex;
+
 			input {
 				flex: 1 1 0%;
 				padding: 0px 12px;

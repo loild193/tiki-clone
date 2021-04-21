@@ -6,12 +6,12 @@ import { Container } from '@material-ui/core'
 import logo from '../../asset/images/logo.png'
 import { Search, Menu, ArrowDropDown, Person, ShoppingCart } from '@material-ui/icons';
 import clsx from 'clsx'
-import { containerStyle, iconStyle } from './customStyle'
+import { containerStyle, iconStyle } from '../../styles/customStyle'
 
 function Header(props) {
 	const containerStyles = containerStyle();
 	const iconStyles = iconStyle();
-	const containerClassname = clsx(containerStyles.root);
+	const containerClassname = clsx(containerStyles.headerRoot);
 	const containerHeaderClassname = clsx(containerStyles.header, "header");
 	const menuIconClassname = clsx(iconStyles.menu);
 	const arrowDropdownIconClassname = clsx(iconStyles.arrowDropDown);

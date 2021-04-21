@@ -1,0 +1,14 @@
+.home-banner__wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 16px;
+
+	.CarouselItem > div > div {
+		width: 820px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
