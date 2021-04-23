@@ -1,0 +1,27 @@
+.quick-tab-link {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+		flex: 100px 1;
+    padding: 0px 10px;
+    margin: 0px 16px;
+		text-align: center;
+
+		& > img {
+			width: 85%;
+		}
+
+		& > p {
+			font-size: 13px;
+		}
+	}
+	&__item:first-child {
+		margin-left: 0px;
+	}
+	&__item:last-child {
+		margin-right: 0px;
+	};
+}

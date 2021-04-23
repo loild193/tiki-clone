@@ -11,8 +11,14 @@ export const containerStyle = makeStyles({
 	},
 	homeBanner: {
 		marginTop: "16px",
-    paddingTop: "14px",
+    padding: "14px 2px",
     backgroundColor: "#fffffe",
+		borderRadius: "4px",
+	},
+	middleBanner: {
+		marginTop: "16px",
+		marginBottom: "16px",
+		padding: "5px 0px",
 	},
 }, { name: "MuiContainer" });
 

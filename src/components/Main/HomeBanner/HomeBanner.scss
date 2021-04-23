@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding-top: 16px;
+	border-radius: 2px;
 
 	.CarouselItem > div > div {
 		width: 820px;
@@ -9,6 +10,7 @@
 		img {
 			width: 100%;
 			height: 100%;
+			border-radius: 3px;
 		}
 	}
 }

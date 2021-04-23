@@ -1,0 +1,16 @@
+.hot-category {
+	&__title {
+		padding-left: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+	}
+
+	&__wrapper {
+		display: flex;
+    margin-top: 20px;
+
+		& > .quick-tab-link__item > img {
+			border-radius: 26px;
+		}
+	}
+}
