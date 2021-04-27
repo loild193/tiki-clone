@@ -23,6 +23,10 @@ export const containerStyle = makeStyles({
 	gridContainer: {
 		paddingTop: "10px",
 	},
+	emailContainer: {
+		display: "flex",
+    alignItems: "flex-end",
+	}
 }, { name: "MuiContainer" });
 
 export const gridStyle = makeStyles({
@@ -70,6 +74,20 @@ export const buttonStyle = makeStyles({
 		'&:hover': {
 			backgroundColor: "#0d5cb6",
 			color: "#fffffe", 
+		}
+	},
+	registerButton: {
+		textTransform: "initial",
+    backgroundColor: "#01afef",
+    color: "#fffffe",
+    fontSize: "13px",
+    fontWeight: "400",
+    marginLeft: "10px",
+		transition: "all 0.25s ease-in-out",
+
+		'&:hover': {
+			backgroundColor: "#01afef",
+			opacity: 0.8,
 		}
 	},
 }, { name: "MuiButton" });
