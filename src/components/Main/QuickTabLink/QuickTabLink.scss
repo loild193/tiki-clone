@@ -9,6 +9,12 @@
     padding: 0px 10px;
     margin: 0px 16px;
 		text-align: center;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			opacity: 0.95;
+		}
 
 		& > img {
 			width: 85%;

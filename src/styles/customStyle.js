@@ -20,7 +20,16 @@ export const containerStyle = makeStyles({
 		marginBottom: "16px",
 		padding: "5px 0px",
 	},
+	gridContainer: {
+		paddingTop: "10px",
+	},
 }, { name: "MuiContainer" });
+
+export const gridStyle = makeStyles({
+	mdStyle: {
+		maxWidth: "20%",
+	},
+}, { name: "MuiGrid" });
 
 export const iconStyle = makeStyles({
 	menu: {
@@ -39,4 +48,28 @@ export const iconStyle = makeStyles({
 
 		cursor: "pointer",
 	},
-}, { name: "MuiSvgIcon" })
+}, { name: "MuiSvgIcon" });
+
+export const ratingStyle = makeStyles({
+	ratingSize: {
+		fontSize: "0.65rem",
+	},
+}, { name: "MuiRating" });
+
+export const buttonStyle = makeStyles({
+	seeMoreButton: {
+		backgroundColor: "#fffffe",
+		color: "#0d5cb6",
+		textTransform: "capitalize",
+		fontSize: "14px",
+		fontWeight: "500",
+		width: "240px",
+		border: "1px solid #0d5cb6",
+		transition: "all 0.25s ease-in-out",
+		
+		'&:hover': {
+			backgroundColor: "#0d5cb6",
+			color: "#fffffe", 
+		}
+	},
+}, { name: "MuiButton" });
