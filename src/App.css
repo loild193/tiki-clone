@@ -9,5 +9,9 @@ html {
 }
 
 body {
-  background-color: rgb(239, 239, 239);
+  background-color: #f4f4f4;
+}
+
+li {
+  list-style: none;
 }

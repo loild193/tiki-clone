@@ -4,8 +4,7 @@
     top: 0;
 		z-index: 1;
 
-		padding-left: 80px;
-    padding-bottom: 10px;	
+		padding: 8px 0px 10px 80px;
     background-color: #fffffe;   
     display: flex;
     align-items: center;
@@ -46,6 +45,10 @@
 				&__rating {
 					display: flex;
 					align-items: center;
+
+					& > span.MuiRating-root {
+						font-size: 0.65rem;
+					}
 
 					& > span.rating-value {
 						font-size: 0.75rem;

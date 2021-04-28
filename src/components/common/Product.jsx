@@ -2,13 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Rating from '@material-ui/lab/Rating';
-import { ratingStyle } from '../../styles/customStyle';
-import clsx from 'clsx';
 
 function Product({ imgSrc, imgAlt, productName, productPrice, productRating }) {
-	const ratingStyles = ratingStyle();
-	const ratingClassName = clsx(ratingStyles.ratingSize);
-	
 	return (
 		<div className="product">
 			<img src={imgSrc} alt={imgAlt} />
@@ -17,7 +12,6 @@ function Product({ imgSrc, imgAlt, productName, productPrice, productRating }) {
 				{ productRating && 
 					<div className="product__info__rating">
 						<Rating
-							className={ratingClassName}
 							name="read-only" 
 							value={productRating} 
 							readOnly

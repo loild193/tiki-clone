@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import BottomBanner from './components/Main/BottomBanner/BottomBanner';
 import DealShock from './components/Main/DealShock/DealShock';
@@ -23,6 +24,7 @@ function App() {
       <BottomBanner />
       <ProductHint />
       <Email />
+      <Footer />
     </div>
   );
 }

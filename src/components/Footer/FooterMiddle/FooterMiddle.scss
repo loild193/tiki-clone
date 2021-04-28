@@ -1,0 +1,18 @@
+.footer-middle {
+	padding: 70px 0px 70px 180px;
+	font-size: 13.5px;
+	width: 50%;
+
+	&__address {
+		margin-left: 5px;
+	}
+
+	&__address-text {
+		font-weight: 600;
+	}
+
+	&__addtion-text {
+		font-size: 12px;
+    margin-top: 5px;
+	}
+}

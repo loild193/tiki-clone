@@ -20,13 +20,21 @@ export const containerStyle = makeStyles({
 		marginBottom: "16px",
 		padding: "5px 0px",
 	},
+	productHintHeader: {
+		paddingTop: "5px",
+	},
 	gridContainer: {
 		paddingTop: "10px",
 	},
 	emailContainer: {
 		display: "flex",
     alignItems: "flex-end",
-	}
+	},
+	footer: {
+		backgroundColor: "#fffffe",
+		paddingTop: "25px",
+		paddingBottom: "15px",
+	},
 }, { name: "MuiContainer" });
 
 export const gridStyle = makeStyles({
@@ -53,12 +61,6 @@ export const iconStyle = makeStyles({
 		cursor: "pointer",
 	},
 }, { name: "MuiSvgIcon" });
-
-export const ratingStyle = makeStyles({
-	ratingSize: {
-		fontSize: "0.65rem",
-	},
-}, { name: "MuiRating" });
 
 export const buttonStyle = makeStyles({
 	seeMoreButton: {

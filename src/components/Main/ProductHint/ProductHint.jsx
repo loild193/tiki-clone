@@ -13,7 +13,7 @@ function ProductHint(props) {
 	const containerStyles = containerStyle();
 	const gridStyles = gridStyle();
 	const buttonStyles = buttonStyle();
-	const containerClassName = clsx(containerStyles.homeBanner);
+	const containerClassName = clsx(containerStyles.homeBanner, containerStyles.productHintHeader);
 	const gridClassName = clsx(containerStyles.gridContainer);
 	const mdClassName = clsx(gridStyles.mdStyle);
 	const buttonClassName = clsx(buttonStyles.seeMoreButton);
@@ -71,6 +71,96 @@ function ProductHint(props) {
 							productName="Thức ăn mèo"
 							productPrice={400000}
 							productRating={3}
+						/>
+					</Grid>
+				</Grid>
+				<Grid container spacing={2}>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={5}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={1}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={1}
+						/>
+					</Grid>
+				</Grid>
+				<Grid container spacing={2}>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={5}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={1}
+						/>
+					</Grid>
+					<Grid className={mdClassName} item xs={12} md>
+						<Product 
+							imgSrc={ProductHintImg} 
+							imgAlt="product hint" 
+							productName="Thức ăn mèo"
+							productPrice={400000}
+							productRating={1}
 						/>
 					</Grid>
 				</Grid>
