@@ -1,9 +1,10 @@
 import axiosClient from "./axiosClient";
 
 const productAPI = {
-  getProducts: () => {
+  getProducts: page => {
     const url = "/products";
     const params = {
+      _page: page,
       _limit: 25,
     }
 

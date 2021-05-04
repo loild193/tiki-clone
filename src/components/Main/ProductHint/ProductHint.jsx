@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import { Star } from '@material-ui/icons'
 import Product from '../../common/Product'
 import productAPI from '../../../api/productAPI'
+import { getArrayIndex } from '../../../utils/utils'
 
 function ProductHint(props) {
 	const containerStyles = containerStyle();
@@ -20,20 +21,35 @@ function ProductHint(props) {
 	const buttonClassName = clsx(buttonStyles.seeMoreButton);
 
 	const [products, setProducts] = useState([]);
+	const [page, setPage] = useState(1);
+
+	const fetchProducts = async (page) => {
+		const productsResponse = await productAPI.getProducts(page);
+	
+		return productsResponse;
+	}
 
 	useEffect(() => {
-		const fetchProducts = async () => {
-			const productsResponse = await productAPI.getProducts();
-			setProducts(productsResponse);
-		}
-
-		fetchProducts();
+		( async () => {
+			const response = await fetchProducts(page);
+			setProducts(response);
+		})();
 	}, []);
 
-	const renderHintProducts = () => {
-		const arr = [0, 5, 10, 15, 25];
+	const handleFetchMoreProducts = () => {
+		setPage(page + 1);
 
-		return arr.map(num => 
+		( async () => {
+			const response = await fetchProducts(page + 1);
+			setProducts([
+				...products,
+				...response,
+			]);
+		})();
+	}
+	
+	const renderHintProducts = () => {
+		return getArrayIndex(products).map(num => 
 			(<Grid className={gridClassName} key={num} container spacing={2}>
 				{
 					products.slice(num, num+5).map((product) => 
@@ -67,7 +83,11 @@ function ProductHint(props) {
 				{	renderHintProducts() }
 					
 				<div className="product-hint__wrapper__button">
-					<Button className={buttonClassName} variant="contained" color="primary">
+					<Button 
+						className={buttonClassName} 
+						variant="contained"
+						onClick={handleFetchMoreProducts}
+					>
 						Xem Thêm
 					</Button>
 				</div>
