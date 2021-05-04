@@ -113,10 +113,11 @@ $category: category;
 		&__wrapper {
 			position: relative;
 
-			& > svg {
+			& > a > svg {
 				font-size: 2rem;
+				color: #fffffe;
 			}
-			& > span.cart-badge {
+			& > a > span.cart-badge {
 				position: absolute;
 				left: 23px;
 

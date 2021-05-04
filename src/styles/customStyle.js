@@ -35,6 +35,20 @@ export const containerStyle = makeStyles({
 		paddingTop: "25px",
 		paddingBottom: "15px",
 	},
+	productDetailContainer: {
+		paddingTop: "30px",
+		display: "flex",
+		justifyContent: "space-around",
+		backgroundColor: "#fffffe",
+	},
+	productInCartContainer: {
+		paddingTop: "15px",
+	},
+	noProduct: {
+		margin: "20px 0px",
+		padding: "30px 400px",
+		backgroundColor: "#fffffe",
+	},
 }, { name: "MuiContainer" });
 
 export const gridStyle = makeStyles({
@@ -58,6 +72,16 @@ export const iconStyle = makeStyles({
 		position: "relative",
 		top: "5px",
 
+		cursor: "pointer",
+	},
+	arrowForwardIos: {
+		fontSize: "0.75rem",
+		color: "#9b9b9b",
+		marginLeft: "5px",
+	},
+	infoIcon: {
+		fontSize: "1rem",
+		marginLeft: "5px",
 		cursor: "pointer",
 	},
 }, { name: "MuiSvgIcon" });
@@ -91,5 +115,60 @@ export const buttonStyle = makeStyles({
 			backgroundColor: "#01afef",
 			opacity: 0.8,
 		}
+	},
+	selectToBuyButton: {
+		marginTop: "15px",
+		width: "60%",
+		backgroundColor: "#ff3945",
+		color: "#fffffe",
+		textTransform: "capitalize",
+		fontSize: "15px",
+
+		'&:hover': {
+			backgroundColor: "#ff3945",
+			opacity: 0.8,
+		}
+	},
+	buyButton: {
+		marginTop: "25px",
+		padding: "10px 0",
+		width: "100%",
+		backgroundColor: "#ff424e",
+		color: "#fffbfc",
+		fontSize: "14px",
+		textTransform: "inherit",
+		transition: "all 0.25s ease-in-out",
+
+		'&:hover': {
+			backgroundColor: "#ff424e",
+			opacity: "0.8",
+		},
+	},
+	continueToBuy: {
+		backgroundColor: "#fdce03",
+		color: "#615d4e",
+		width: "70%",
+		textTransform: "inherit",
+		fontSize: "15px",
+		fontWeight: "600",
+		transition: "all 0.25s ease-in-out",
+
+		"&:hover": {
+			backgroundColor: "#efbf0c",
+		},
+	},
+	seeCart: {
+		display: "flex",
+		textTransform: "inherit",
+		marginTop: "10px",
+		fontSize: "14px",
+		backgroundColor: "#ff3945",
+		color: "#fffffe",
+		transition: "all 0.25s ease-in-out",
+
+		'&:hover': {
+			backgroundColor: "#ff3945",
+			opacity: "0.8",
+		},
 	},
 }, { name: "MuiButton" });

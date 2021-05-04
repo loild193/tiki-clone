@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import './Header.scss'
 import { Container } from '@material-ui/core'
@@ -7,8 +8,12 @@ import logo from '../../asset/images/logo.png'
 import { Search, Menu, ArrowDropDown, Person, ShoppingCart } from '@material-ui/icons';
 import clsx from 'clsx'
 import { containerStyle, iconStyle } from '../../styles/customStyle'
+import { useCart } from '../../contexts/Cart'
+import { getTotalProducts } from '../../utils/utils.js'
 
 function Header(props) {
+	const { cart } = useCart();
+
 	const containerStyles = containerStyle();
 	const iconStyles = iconStyle();
 	const containerClassname = clsx(containerStyles.headerRoot);
@@ -20,7 +25,9 @@ function Header(props) {
 		<Container className={containerClassname} maxWidth="xl">
 			<Container className={containerHeaderClassname}>
 				<div className="header__logo">
-					<img src={logo} alt="Tiki Logo" />
+					<Link to="/">
+						<img src={logo} alt="Tiki Logo" />
+					</Link>
 				</div>
 
 				<div className="header__category">
@@ -62,8 +69,10 @@ function Header(props) {
 				
 				<div className="header__cart">
 					<div className="header__cart__wrapper">
-						<ShoppingCart />
-						<span className="cart-badge">0</span>
+						<Link to="/cart">
+							<ShoppingCart />
+							<span className="cart-badge">{ getTotalProducts(cart) }</span>
+						</Link>
 					</div>
 					<span>Giỏ Hàng</span>
 				</div>

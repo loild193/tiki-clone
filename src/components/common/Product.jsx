@@ -9,7 +9,7 @@ function Product({ imgSrc, imgAlt, productName, productPrice, productRating }) {
 			<img src={imgSrc} alt={imgAlt} />
 			<div className="product__info">
 				<p>{productName}</p>
-				{ productRating && 
+				{ productRating !== 0 && 
 					<div className="product__info__rating">
 						<Rating
 							name="read-only" 

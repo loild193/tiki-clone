@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import './ProductHint.scss'
 import { Button, Container, Grid } from '@material-ui/core'
@@ -7,7 +8,7 @@ import { buttonStyle, containerStyle, gridStyle } from '../../../styles/customSt
 import clsx from 'clsx'
 import { Star } from '@material-ui/icons'
 import Product from '../../common/Product'
-import ProductHintImg from '../../../asset/images/product-hint.jpg'
+import productAPI from '../../../api/productAPI'
 
 function ProductHint(props) {
 	const containerStyles = containerStyle();
@@ -17,6 +18,41 @@ function ProductHint(props) {
 	const gridClassName = clsx(containerStyles.gridContainer);
 	const mdClassName = clsx(gridStyles.mdStyle);
 	const buttonClassName = clsx(buttonStyles.seeMoreButton);
+
+	const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			const productsResponse = await productAPI.getProducts();
+			setProducts(productsResponse);
+		}
+
+		fetchProducts();
+	}, []);
+
+	const renderHintProducts = () => {
+		const arr = [0, 5, 10, 15, 25];
+
+		return arr.map(num => 
+			(<Grid className={gridClassName} key={num} container spacing={2}>
+				{
+					products.slice(num, num+5).map((product) => 
+						<Grid className={mdClassName} key={product.id} item xs={12} md>
+							<Link to={{pathname: `/product/${product.id}`}}>
+								<Product 
+									imgSrc={product.image} 
+									imgAlt={product.name} 
+									productName={product.name}
+									productPrice={product.price}
+									productRating={product.rating}
+								/>
+							</Link>
+						</Grid>
+					)
+				}
+			</Grid>)
+		)
+	}
 
 	return (
 		<Container className={containerClassName}>
@@ -28,188 +64,8 @@ function ProductHint(props) {
 				</div>
 			</div>
 			<div className="product-hint__wrapper">
-				<Grid className={gridClassName} container spacing={2}>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={3}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={2}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={3}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={3}
-						/>
-					</Grid>
-				</Grid>
-				<Grid container spacing={2}>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={5}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-				</Grid>
-				<Grid container spacing={2}>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={5}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-				</Grid>
-				<Grid container spacing={2}>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={5}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-					<Grid className={mdClassName} item xs={12} md>
-						<Product 
-							imgSrc={ProductHintImg} 
-							imgAlt="product hint" 
-							productName="Thức ăn mèo"
-							productPrice={400000}
-							productRating={1}
-						/>
-					</Grid>
-				</Grid>
-
+				{	renderHintProducts() }
+					
 				<div className="product-hint__wrapper__button">
 					<Button className={buttonClassName} variant="contained" color="primary">
 						Xem Thêm
